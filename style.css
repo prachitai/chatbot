@@ -1,0 +1,111 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        .chat-container {
+            width: 400px;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: #fff;
+            display: none;
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .chat-header h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .chat-header .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-header .icons i {
+            cursor: pointer;
+        }
+
+        .chat-content {
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .message {
+            margin-bottom: 20px;
+        }
+
+        .message.bot {
+            text-align: left;
+        }
+
+        .message.visitor {
+            text-align: right;
+        }
+
+        .message .bubble {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 20px;
+            background-color: #e0e0e0;
+            color: #333;
+            max-width: 70%;
+        }
+
+        .message.visitor .bubble {
+            background-color: #0078ff;
+            color: #fff;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 0 0 10px 10px;
+            background-color: #f8f8f8;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+        }
+
+        .chat-footer button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #0078ff;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .chat-footer button:hover {
+            background-color: #005bb5;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+    </style>
