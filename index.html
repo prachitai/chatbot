@@ -145,20 +145,31 @@
                 document.getElementById('google-login-button'),
                 { theme: 'outline', size: 'large' }
             );
+
+            document.querySelector('.login-container').style.display = 'flex';
+            document.querySelector('.chat-container').style.display = 'none';
         };
 
         function sendMessage() {
             const input = document.getElementById('message-input');
             const messageText = input.value.trim();
-            if (messageText) {
-                const chatContent = document.querySelector('.chat-content');
-                const messageDiv = document.createElement('div');
-                messageDiv.className = 'message visitor';
-                messageDiv.innerHTML = <div class="bubble">${messageText}</div>;
-                chatContent.appendChild(messageDiv);
-                input.value = '';
-                chatContent.scrollTop = chatContent.scrollHeight;
+
+            if (!messageText || messageText.length > 500) {
+                alert('Message is invalid or too long.');
+                return;
             }
+
+            const chatContent = document.querySelector('.chat-content');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message visitor';
+            messageDiv.innerHTML = `<div class="bubble">${messageText}</div>`;
+            chatContent.appendChild(messageDiv);
+
+            input.value = '';
+            chatContent.scrollTo({
+                top: chatContent.scrollHeight,
+                behavior: 'smooth',
+            });
         }
     </script>
 </head>
