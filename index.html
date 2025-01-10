@@ -5,37 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="2lW9y_hBaCG6OYf1vZR6CJib-FeDzCekJUF7csAbsko" />
     <title>Chatbox Design</title>
-   
-</head>
-<body>
-    <div class="login-container">
-        <div id="google-login-button"></div>
-    </div>
-    <div class="chat-container">
-        <div class="chat-header">
-            <h2>Chat with us!</h2>
-            <div class="icons">
-                <i>&#128077;</i>
-                <i>&#128078;</i>
-            </div>
-        </div>
-        <div class="chat-content">
-            <div class="message bot">
-                <div class="bubble">Hello Nice</div>
-            </div>
-            <div class="message bot">
-                <div class="bubble">Welcome to LiveChat. I was made with . Pick a topic from the list or type down a question!</div>
-            </div>
-        </div>
-        <div class="chat-footer">
-            <input type="text" id="message-input" placeholder="Write a message">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-</body>
-</html>
-
-<style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -146,8 +116,7 @@
             background-color: #f3f3f3;
         }
     </style>
-
- <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
         function handleCredentialResponse(response) {
             try {
@@ -185,10 +154,38 @@
                 const chatContent = document.querySelector('.chat-content');
                 const messageDiv = document.createElement('div');
                 messageDiv.className = 'message visitor';
-                messageDiv.innerHTML = `<div class="bubble">${messageText}</div>`;
+                messageDiv.innerHTML = <div class="bubble">${messageText}</div>;
                 chatContent.appendChild(messageDiv);
                 input.value = '';
                 chatContent.scrollTop = chatContent.scrollHeight;
             }
         }
     </script>
+</head>
+<body>
+    <div class="login-container">
+        <div id="google-login-button"></div>
+    </div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat with us!</h2>
+            <div class="icons">
+                <i>&#128077;</i>
+                <i>&#128078;</i>
+            </div>
+        </div>
+        <div class="chat-content">
+            <div class="message bot">
+                <div class="bubble">Hello Nice</div>
+            </div>
+            <div class="message bot">
+                <div class="bubble">Welcome to LiveChat. I was made with . Pick a topic from the list or type down a question!</div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="message-input" placeholder="Write a message">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</body>
+</html>
